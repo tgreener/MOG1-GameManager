@@ -13,6 +13,7 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>buildGame.sh</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -72,6 +73,8 @@
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -115,6 +118,8 @@
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -145,6 +150,8 @@
       <item path="RouteParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -182,6 +189,8 @@
       <item path="RouteParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -225,6 +234,8 @@
       <item path="RouteParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool>
@@ -270,6 +281,8 @@
       <item path="RouteParser.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="RouteParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="buildGame.sh" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="8">
         <ccTool>

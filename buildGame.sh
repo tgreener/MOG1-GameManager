@@ -7,6 +7,7 @@ declare -a POIs=(
 	"Waffle Land" 1 2 3
 	"Pickled Plains" 3 2 1
 	"Thunder Hill" 2 3 1
+        "Tortoise Island" 3 6 5
 );
 
 for (( i=0; i<${#POIs[*]}; i++ ))
