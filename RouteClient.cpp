@@ -100,5 +100,46 @@ void RouteClient::printRouteData() {
 }
 
 void RouteClient::printAllRoutes() {
+    int messageLength = 3;
+    unsigned char message[messageLength];
     
+    message[0] = 0x03;
+    message[1] = 0x08;
+    message[2] = 0xff;
+    
+    if(cc.sendMessage(message, messageLength)) {
+        int headerBufferSize = 2 + sizeof(unsigned int);
+        unsigned char headerBuffer[headerBufferSize];
+        unsigned int replyLength = 0;
+        
+        cc.receiveMessage((char*)headerBuffer, headerBufferSize);
+        if(headerBuffer[0] == 1) {
+            unsigned int numBytesInLengthMessage = headerBuffer[1];
+            replyLength = *((unsigned int*)(headerBuffer + 2));
+            printf("Bytes: %d, Length: %d\n", numBytesInLengthMessage, replyLength);
+        }
+        else {
+            throw "Server error retrieving all route data.";
+        }
+        
+        unsigned int replyIndex = 0;
+        
+        unsigned char* readBuffer = new unsigned char[replyLength];
+        cc.receiveMessage((char*)readBuffer, replyLength);
+        
+        while(replyLength > 0 && readBuffer[replyIndex] != 255) {
+            unsigned char id = readBuffer[replyIndex];
+            unsigned char poiAID = readBuffer[replyIndex + 1];
+            unsigned char poiBID = readBuffer[replyIndex + 2];
+            unsigned char difficulty = readBuffer[replyIndex + 3];
+            bool bidirectional = readBuffer[replyIndex + 4] != 0;
+            bool reverse = readBuffer[replyIndex + 5] != 0;
+            
+            replyIndex += 6;
+            
+            printf("Route %d: %d, %d, %d, %d, %d\n", id, poiAID, poiBID, difficulty, bidirectional, reverse);
+        }
+        
+        delete[] readBuffer;
+    }
 }
